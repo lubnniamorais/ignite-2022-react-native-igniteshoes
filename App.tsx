@@ -9,7 +9,7 @@ import { THEME } from './src/theme';
 import { Loading } from './src/components/Loading';
 
 import { CartContextProvider } from './src/contexts/CartContext';
-import { tagUserEmailCreate } from './src/notifications/notificationsTags';
+import { tagUserInfoCreate } from './src/notifications/notificationsTags';
 
 // Antes de exportarmos a função devemos inicializar o OneSignal passando o app id
 OneSignal.initialize("5ca1c259-ed23-418e-a1fe-464cce22ea58");
@@ -20,7 +20,7 @@ OneSignal.Notifications.requestPermission(true);
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
 
-  tagUserEmailCreate('lubnnia@gmail.com');
+  tagUserInfoCreate();
 
   return (
     <NativeBaseProvider theme={THEME}>
